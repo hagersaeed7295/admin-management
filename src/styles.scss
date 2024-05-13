@@ -1,0 +1,24 @@
+
+/* You can add global styles to this file, and also import other style files */
+
+// @import 'bootstrap/scss/bootstrap';
+// @import 'ngx-toastr/toastr';
+
+@import './assets/styles/variables';
+
+
+
+@import './assets/styles/components/shared/sidebar';
+@import './assets/styles/components/shared/pagination';
+@import './assets/styles/components/shared/listFilter';
+
+@import './assets/styles/components/shared/dashboard';
+@import './assets/styles/components/login';
+
+@import './assets/styles/general';
+@import './assets/styles/fonts';
+@import './assets/styles/bootstrap-override';
+
+
+
+

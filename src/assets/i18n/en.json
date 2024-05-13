@@ -1,0 +1,86 @@
+{
+    "login": {
+        "Login": "Login",
+        "Welcome": "Welcome",
+        "Username": "Username",
+        "YourUsername": "Enter your username",
+        "UsernameRequired": "Username is required!",
+        "Password": "Password",
+        "YourPassword": "Enter your password",
+        "PasswordRequired": "Password is required!",
+        "PasswordCharactersLength": "Password must be at least 4 characters!",
+        "InvalidEntered": "Invalid username or password. Please check"
+    },
+    "general": {
+        "language": "Arabic",
+        "Home": "Home",
+        "desc": "desc",
+        "asc": "asc",
+        "NoDataFound": "No Data Found",
+        "clear": "clear",
+        "search": "search",
+        "Search": "Search",
+        "Filter": "Filter",
+        "FilterBy": "Filter by",
+        "SortedBy": "Sorted by",
+        "WelcomeTo": "Welcome to Admin Panel",
+        "welcomeAwesome": "welcome to your awesome Admin Panel!",
+        "page_Not_Found": "page Not Found"
+    },
+    "header": {
+        "Hello": "Hello",
+        "SignOut": "SignOut"
+    },
+    "footer": {
+        "copy-right": "© 2024, All Rights Reserved"
+    },
+    "products": {
+        "Products": "Products",
+        "productList": "Product List",
+        "title": "title",
+        "price": "price",
+        "category": "category",
+        "description": "description",
+        "AddProduct": "Add Product",
+        "UpdateProduct": "Update Product"
+    },
+    "categories": {
+        "categories": "Categories",
+        "categoryList": "category List",
+        "addCategory": "Add Category",
+        "AllCategories": "All Categories"
+    },
+    "sweetAlert": {
+        "success": "Success",
+        "ok": "Ok",
+        "AreYouSure": "Are you sure?",
+        "yes": "Yes",
+        "no": "no",
+        "cancel": "cancel",
+        "Failed": "Failed"
+    },
+    "validationMsg": {
+        "required": "is required!",
+        "AddedSuccess": "Added successfully",
+        "DeletedSuccessfully": "Deleted successfully",
+        "UpdatedSuccessfully": "Updated successfully",
+        "UnableAdd": "Unable to add",
+        "UnableUpdate": "Unable to Update",
+        "Invalid": "Invalid"
+    },
+    "user": {
+        "users": "Users",
+        "user": "User",
+        "userList": "Users List",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "status": "Status",
+        "active": "Active",
+        "softDeleted": "Soft Deleted",
+        "AddUser": "Add User",
+        "UpdateUser": "Update User",
+        "allStatus": "all Status",
+        "All": "All"
+    }
+}

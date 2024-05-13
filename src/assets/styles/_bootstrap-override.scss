@@ -1,0 +1,302 @@
+.navbar {
+    &.head-nav {
+        background-color: transparent;
+        padding: rem(20) 0;
+        margin-top: rem(35);
+        border-radius: rem(2);
+        box-shadow: none;
+        border-radius: 1px;
+        border-bottom: 1px solid $grey-d4;
+
+        h2 {
+            font-size: rem(24);
+            line-height: rem(36);
+            margin: 0;
+            font-weight: $fontBold;
+            text-transform: capitalize;
+            color: $primary-color;
+        }
+
+    }
+}
+
+.table {
+    &-primary {
+        width: 100%;
+        color: $grey-6;
+        border-collapse: separate;
+        border-spacing: 0 rem(15);
+        background-color: transparent;
+        font-weight: $fontMedium;
+        font-size: rem(14);
+        line-height: rem(26);
+
+        thead th {
+            border: none;
+            color: $grey-5;
+            padding: 0;
+            font-weight: inherit;
+            padding-bottom: rem(15);
+            padding-#{$left}: rem(20);
+            white-space: nowrap;
+            font-size: rem(14);
+            line-height: rem(22);
+            font-weight: $fontMedium;
+
+            &:last-child {
+                padding-#{$right}: rem(30);
+            }
+        }
+
+        tbody tr {
+            position: relative;
+            border-radius: rem(6);
+            background-color: $white;
+            box-shadow: rem(0) rem(2) rem(4) rgba($grey-5, 0.1);
+            transition: all 200ms;
+            // white-space: nowrap;
+
+            td {
+                vertical-align: middle;
+                border-color: transparent;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                font-size: rem(14);
+                line-height: rem(26);
+                padding: 0;
+                padding-top: rem(12);
+                padding-bottom: rem(12);
+                padding-#{$left}: rem(20);
+                transition: all 200ms;
+                @media (max-width: 991px) {
+                   white-space: nowrap;
+                }
+                &:first-child {
+                    color: $grey-3;
+                    font-size: rem(16);
+                    line-height: rem(28);
+                    padding-#{$left}: rem(20);
+                    border-top-#{$left}-radius: rem(6);
+                    border-bottom-#{$left}-radius: rem(6);
+                    border-#{$left}: 1px solid transparent;
+                }
+
+                &:last-child {
+                    border-#{$right}: 1px solid transparent;
+                    border-top-#{$right}-radius: rem(6);
+                    border-bottom-#{$right}-radius: rem(6);
+                    padding-#{$right}: rem(20);
+                }
+
+                >b {
+                    font-weight: $fontSemiBold;
+                }
+            }
+
+            .img-circle {
+                .image {
+                    width: rem(45);
+                    height: rem(45);
+                    background-color: $white-f6;
+                    margin-#{$right}: rem(15);
+
+                    span {
+                        font-size: rem(16);
+                        line-height: rem(28);
+                    }
+                }
+
+                .image-label {
+                    white-space: nowrap;
+                    font-size: rem(16);
+                    line-height: rem(28);
+                }
+            }
+
+            .mat-trans {
+                padding: rem(13) rem(20);
+                border-color: #bfbfbf;
+            }
+
+            .btn-actions {
+                justify-content: flex-end;
+
+                >* {
+                    @media (min-width: 1200px) {
+                        opacity: 0;
+                        transition: all linear 0.2s;
+                    }
+
+                }
+            }
+
+            &:hover,
+            &:active,
+            &:focus {
+
+                td {
+                    border-color: $grey-d4;
+                }
+
+                .btn-actions {
+                    >* {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &.grey-tabel {
+            margin-bottom: rem(0);
+
+            thead {
+                th {
+                    color: $grey-6;
+                    padding-#{$left}: rem(20);
+
+                    &:last-child {
+                        padding-#{$left}: rem(0);
+                        padding-#{$right}: rem(20);
+                        text-align: $right;
+                    }
+                }
+            }
+
+            tbody tr {
+                background-color: $white-f9;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: $white-f;
+                    cursor: pointer;
+                }
+
+                td {
+                    padding-#{$left}: rem(20);
+                    color: $grey-6;
+                    font-size: rem(14);
+                    font-weight: $fontSemiBold;
+
+                    &:first-child {
+                        color: $grey-3;
+                        font-size: rem(16);
+                    }
+
+                    &:last-child {
+                        padding-#{$left}: rem(0);
+                        padding-#{$right}: rem(20);
+                        text-align: $right;
+                    }
+                }
+            }
+
+            .img-circle .image {
+                background-color: $white;
+                border-color: $white-f6;
+            }
+        }
+    }
+
+    >:not(caption)>*>* {
+        background-color: transparent;
+    }
+}
+
+[dir="rtl"] .table {
+    &-primary {
+        thead th {
+            padding-#{$right}: rem(20);
+
+            &:last-child {
+                padding-#{$left}: rem(30);
+            }
+        }
+
+        tbody tr {
+            td {
+                padding-#{$right}: rem(20);
+
+                &:first-child {
+                    padding-#{$right}: rem(20);
+                    border-top-#{$right}-radius: rem(6);
+                    border-bottom-#{$right}-radius: rem(6);
+                    border-#{$right}: 1px solid transparent;
+                    padding-#{$left}: rem(0);
+                    border-top-#{$left}-radius: rem(0);
+                    border-bottom-#{$left}-radius: rem(0);
+                    border-#{$left}: 1px solid transparent;
+                }
+
+                &:last-child {
+                    border-#{$left}: 1px solid transparent;
+                    border-top-#{$left}-radius: rem(6);
+                    border-bottom-#{$left}-radius: rem(6);
+                    padding-#{$left}: rem(20);
+                    border-#{$right}: 1px solid transparent;
+                    border-top-#{$right}-radius: rem(0);
+                    border-bottom-#{$right}-radius: rem(0);
+                    padding-#{$right}: rem(0);
+                }
+            }
+
+            .img-circle {
+                .image {
+                    margin-#{$left}: rem(15);
+                }
+            }
+        }
+
+        &.grey-tabel {
+            thead {
+                th {
+                    padding-#{$right}: rem(20);
+
+                    &:last-child {
+                        padding-#{$right}: rem(0);
+                        padding-#{$left}: rem(20);
+                        text-align: $left;
+                    }
+                }
+            }
+
+            tbody tr {
+                td {
+                    padding-#{$right}: rem(20);
+
+                    &:last-child {
+                        padding-#{$right}: rem(0);
+                        padding-#{$left}: rem(20);
+                        text-align: $left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-dialog {
+    .modal-header {
+        background-color: $primary-color;
+        color: $white;
+
+        .modal-title {
+            margin: 0px;
+        }
+        .close{
+            color: white;
+            font-size: 25px;
+        }
+    }
+
+    .btn-primary {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    label{
+        margin-bottom: 5px;
+    }
+    .form-group{
+        margin-bottom: 10px;
+    }
+}

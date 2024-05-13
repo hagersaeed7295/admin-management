@@ -1,0 +1,127 @@
+<nav class="navbar head-nav">
+    <h2>{{ 'user.AddUser' | translate }}</h2>
+</nav>
+<div class="page">
+    <div class="page-filters">
+        <span class="total-count"><span>{{recordsData.length}}</span> {{ 'user.users' |
+            translate }}</span>
+        <div class="sort-item">
+            <label>{{ 'general.SortedBy' | translate }}:</label>
+            <select class="form-control" (change)="sortRecords($event)" [(ngModel)]="sortValue">
+                <option selected value="all">{{'user.All' | translate}}</option>
+                <option *ngFor="let sortItem of sortItems" [value]="sortItem.value">{{sortItem.name}}</option>
+            </select>
+        </div>
+        <div class="filters-container">
+            <div class="search-input">
+                <div *ngIf="showSearch" class="form-group">
+                    <input [(ngModel)]="filterModel.searchText" class="form-control">
+                    <span (click)="resetSearch(); showSearch = false;" class="reset-btn"> <i
+                            class="fa-regular fa-close"></i></span>
+                </div>
+                <button (click)="showSearch = true" class="btn-search">
+                    <i class="fa-regular fa-search"></i>
+                </button>
+            </div>
+            <button (click)="showFilter = !showFilter" [ngClass]='{"active": showFilter}'
+                class="btn dropdown-custom dropdown-toggle">
+                <img src="../../../assets/images/filter-icon.svg" alt="">
+                <span>{{ 'general.Filter' | translate }}</span>
+                <svg width="8" height="5.001" viewBox="0 0 8 5.001">
+                    <path id="menu-icon" d="M-3.562-9.316-.5-6.215l3.062-3.1.938.949-4,4.051-4-4.051Z"
+                        transform="translate(4.5 9.316)" fill="#a64bf4" opacity="0.8" />
+                </svg>
+            </button>
+            <div class="create-item" (click)="addUser()">
+                <a class="customBtn" mat-raised-button color="primary">
+                    <span>{{ 'user.AddUser' | translate }}</span>
+                </a>
+            </div>
+        </div>
+        <div class="filter-section" [hidden]="!showFilter">
+            <h4 class="title">{{ 'general.FilterBy' | translate }}</h4>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <label for="status">{{ 'user.status' | translate }}</label>
+                    <select class="form-select" #selectedStatus aria-label="UserStatus"
+                        (change)="filterByStatus(selectedStatus.value)" name="status">
+                        <option selected value="all">{{'user.allStatus' | translate}}</option>
+                        <option *ngFor="let item of userStatus" value="{{item.value}}">{{item.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf='dataLoading' class="dataLoading">
+        <mat-spinner class="m-auto" diameter="50"></mat-spinner>
+    </div>
+    <ng-container *ngIf='!dataLoading'>
+        <div *ngIf="recordsData && (recordsData | search: filterModel.searchText).length; else dataEmpty">
+            <div class="table-responsive" *ngIf="recordsData.length; else dataEmpty">
+                <table class="table table-primary">
+                    <thead>
+                        <tr>
+                            <th width="30%">{{ 'user.name' | translate }}</th>
+                            <th width="15%">{{ 'user.status' | translate }}</th>
+                            <th width="35%">{{ 'user.email' | translate }}</th>
+                            <th width="15%">{{ 'user.phone' | translate }}</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let record of recordsData | search: filterModel.searchText; index as i">
+                            <td>
+                                <div class="name-with-image">
+                                    <div class="image-circle mr-3">
+                                        <div class="image m-0">
+                                            <img *ngIf="record.image" [src]="record.image" (error)='record.image = ""'>
+                                            <span *ngIf="!record.image">
+                                                {{ record.name | shortName }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="name">
+                                        <h5>{{record.name}}</h5>
+                                    </div>
+                                </div>
+
+                            </td>
+                            <td>
+                                <span [ngClass]="{ 'active': record.status == 'active', 'softDeleted': record.status == 'soft_deleted'}">
+                                    {{record.status}}
+                                </span>
+                                
+                            </td>
+                            <td>
+                                {{record.email}}
+                            </td>
+                            <td>
+                                {{record.phone}}
+                            </td>
+
+                            <td>
+                                <div class="btn-actions">
+                                    <button title="view user details" class="btn" (click)="viewUser(record)"><i
+                                            class="fa-regular fa-eye"></i></button>
+                                    <button (click)="editUser(record)" title="edit user" class="btn"><i
+                                            class="fa-regular fa-edit" *ngIf="role === 'admin'"></i></button>
+
+                                    <button title="delete user" class="btn text-danger" (click)="deleteUser(record)"
+                                        [class.loading]="ApprovalLoading" [disabled]="ApprovalLoading"
+                                        *ngIf="role === 'admin'"><i class="fa-regular fa-trash"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </ng-container>
+    <ng-template #dataEmpty>
+        <div class="data-empty">
+            <img src="../../../assets/images/not-found.avif" />
+            <p>{{ 'general.NoDataFound' | translate }}</p>
+        </div>
+    </ng-template>
+</div>

@@ -1,0 +1,81 @@
+<header class="modal-header">
+  <div class="row w-100">
+    <div class="col-11">
+      <h3 class="modal-title">
+        <span *ngIf="!inEditMode">{{ 'user.AddUser' | translate }}</span>
+        <span *ngIf="inEditMode">{{'user.UpdateUser' | translate}}</span>
+      </h3>
+    </div>
+    <div class="col-1 justify-content-end text-end" *ngIf="!inEditMode">
+      <button type="button" class="btn p-0 close" data-dismiss="alert" (click)="cancel()">
+        &times;
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<div class="modal-body">
+  <form [formGroup]="addUserForm" name="addUserForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">{{ 'user.name' | translate }}</label>
+      <input type="text" class="form-control" name="name" [placeholder]="'user.name' | translate" formControlName="name"
+        required
+        [ngClass]="{ 'is-invalid':  (addUserForm.controls['name'].touched) && addUserForm.controls['name'].invalid}" />
+      <div
+        *ngIf="addUserForm.controls['name'].invalid && (addUserForm.controls['name'].dirty || addUserForm.controls['name'].touched)"
+        class="invalid-feedback">
+        <div *ngIf="addUserForm.controls['name'].errors?.['required']"> {{ 'validationMsg.required' | translate }}</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="status">{{ 'user.status' | translate }}</label>
+      <select class="form-select"
+        [ngClass]="{ 'is-invalid':   (addUserForm.controls['status'].touched)   && addUserForm.controls['status'].errors }"
+        required aria-label="UserStatus" formControlName="status" name="status">
+        <option *ngFor="let item of userStatus" value="{{item.value}}">{{item.name}}</option>
+      </select>
+      <div
+        *ngIf="addUserForm.controls['status'].invalid && (addUserForm.controls['status'].dirty || addUserForm.controls['status'].touched)"
+        class="invalid-feedback">
+        <div *ngIf="addUserForm.controls['status'].errors?.['required']"> {{ 'validationMsg.required' | translate }}</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">{{ 'user.email' | translate }}</label>
+      <input type="text" class="form-control" name="email" [placeholder]="'user.email' | translate"
+        formControlName="email" required
+        [ngClass]="{ 'is-invalid':  (addUserForm.controls['email'].touched) && addUserForm.controls['email'].invalid}" />
+      <div
+        *ngIf="addUserForm.controls['email'].invalid && (addUserForm.controls['email'].dirty || addUserForm.controls['email'].touched)"
+        class="invalid-feedback">
+        <div *ngIf="addUserForm.controls['email'].errors?.['required']"> {{ 'validationMsg.required' | translate }}</div>
+        <div *ngIf="addUserForm.controls['email'].errors?.['pattern']">
+          {{ 'validationMsg.Invalid' | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">{{ 'user.phone' | translate }}</label>
+      <input type="text" class="form-control" name="phone" [placeholder]="'user.phone' | translate"
+        formControlName="phone" required maxlength="50"
+        [ngClass]="{ 'is-invalid':  (addUserForm.controls['phone'].touched)  && addUserForm.controls['phone'].errors }" />
+      <div
+        *ngIf="addUserForm.controls['phone'].invalid && (addUserForm.controls['phone'].dirty || addUserForm.controls['phone'].touched)"
+        class="invalid-feedback">
+        <div *ngIf="addUserForm.controls['phone'].errors?.['required']"> {{ 'validationMsg.required' | translate }}</div>
+        <div *ngIf="addUserForm.controls['phone'].errors?.['pattern']">
+          {{ 'validationMsg.Invalid' | translate }}
+        </div>
+      </div>
+    </div>
+
+
+
+    <button class="btn btn-primary btn-block" [disabled]="loading || addUserForm.invalid">
+      <span *ngIf="!inEditMode">{{ 'user.AddUser' | translate }}</span>
+      <span *ngIf="inEditMode">{{'user.UpdateUser' | translate}}</span>
+    </button>
+
+  </form>
+</div>

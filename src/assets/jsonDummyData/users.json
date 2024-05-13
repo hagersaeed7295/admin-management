@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "ahmed",
+        "email": "a@gmail.com",
+        "phone": 123456789101,
+        "status": "active"
+    },
+    {
+        "id": 2,
+        "name": "omar",
+        "email": "a@gmail.com",
+        "phone": 123456789101,
+        "status": "active"
+    },
+    {
+        "id": 3,
+        "name": "ali",
+        "email": "c@gmail.com",
+        "phone": 123456789101,
+        "status": "soft_deleted"
+    },
+    {
+        "id": 4,
+        "name": "Smith",
+        "email": "smith@gmail.com",
+        "phone": 123456789101,
+        "status": "soft_deleted"
+    },
+    {
+        "id": 5,
+        "name": "John",
+        "email": "john@gmail.com",
+        "phone": 123456789101,
+        "status": "active"
+    },
+    {
+        "id": 6,
+        "name": "ahmed",
+        "email": "a@gmail.com",
+        "phone": 123456789101,
+        "status": "active"
+    },
+    {
+        "id": 7,
+        "name": "omar",
+        "email": "a@gmail.com",
+        "phone": 123456789101,
+        "status": "active"
+    },
+    {
+        "id": 8,
+        "name": "ali",
+        "email": "c@gmail.com",
+        "phone": 123456789101,
+        "status": "soft_deleted"
+    },
+    {
+        "id": 9,
+        "name": "Smith",
+        "email": "smith@gmail.com",
+        "phone": 123456789101,
+        "status": "soft_deleted"
+    },
+    {
+        "id": 10,
+        "name": "John",
+        "email": "john@gmail.com",
+        "phone": 123456789101,
+        "status": "active"
+    }
+]

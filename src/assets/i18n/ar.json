@@ -1,0 +1,69 @@
+{
+    "login": {
+        "Login": "تسجيل الدخول",
+        "Welcome": "مرحباً",
+        "Username": "اسم المستخدم",
+        "Password": "كلمة المرور",
+        "YourPassword": "أدخل كلمة المرور",
+        "YourUsername": "أدخل اسم المستخدم",
+        "UsernameRequired": "اسم المستخدم مطلوب!",
+        "PasswordRequired": "كلمة المرور مطلوبة",
+        "PasswordCharactersLength": "يجب أن تتكون كلمة المرور من 4 أحرف على الأقل",
+        "InvalidEntered": "خطأ في اسم المستخدم أو كلمة مرور. يرجى المراجعة"
+    },
+    "general": {
+        "language": "English",
+        "Home": "الصفحة الرئيسية",
+        "desc": "desc",
+        "asc": "asc",
+        "NoDataFound": "لم يتم العثور على بيانات",
+        "Search": "بحث",
+        "Filter": "تصفية",
+        "FilterBy": "تصفية حسب",
+        "SortedBy": "مرتبة حسب",
+        "Entity": "الكيان",
+        "WelcomeTo": "مرحبًا بك في لوحة الإدارة",
+        "page_Not_Found": "الصفحة غير موجودة",
+        "welcomeAwesome": "مرحبًا بك في لوحة الإدارة الرائعة الخاصة بك!"
+    },
+    "header": {
+        "Hello": "أهلا",
+        "SignOut": "تسجيل الخروج"
+    },
+    "footer": {
+        "copy-right": "© 2024، جميع الحقوق محفوظة"
+    },
+    "sweetAlert": {
+        "success": "نجاح",
+        "ok": "تم",
+        "AreYouSure": "هل انت متاكد؟",
+        "yes": "نعم",
+        "no": "لا",
+        "cancel": "إلغاء",
+        "Failed": "فشل"
+    },
+    "validationMsg": {
+        "required": "مطلوب!",
+        "AddedSuccess": "تمت إضافة بنجاح",
+        "DeletedSuccessfully": "تم حذف بنجاح",
+        "UpdatedSuccessfully": "تم تحديث بنجاح",
+        "UnableAdd": "لم يتم اضافة",
+        "UnableUpdate": "غير قادر على تعديل",
+        "Invalid": "غير صالح"
+    },
+    "user": {
+        "users": "المستخدمين",
+        "user": "المستخدم",
+        "userList": "قائمة المستخدمين",
+        "name": "الاسم",
+        "email": "البريد الالكتروني",
+        "phone": "رقم الهاتف",
+        "status": "الحالة",
+        "active": "نشط",
+        "softDeleted": "مخذوف",
+        "AddUser": "اضافة مستخدم",
+        "UpdateUser": "تعديل بيانات المستخدم",
+        "allStatus": "جميع الحالات",
+        "All": "الكل"
+    }
+}

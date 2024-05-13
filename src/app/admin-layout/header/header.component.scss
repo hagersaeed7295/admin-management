@@ -1,0 +1,85 @@
+@import '../../../../src/assets/styles/variables';
+
+.header {
+    background-color: $white-f9;
+    box-shadow: rem(2) rem(0) rem(10) rgba($black-0, 0.1);
+    padding: rem(20) 15px;
+    display: flex;
+    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 998;
+
+    @media (min-width: 500px) {
+        padding-#{$right}: 30px;
+        padding-#{$left}: 30px;
+    }
+
+    @media (max-width: 500px) {
+        background-color: $primary-color;
+
+        .notification-btn {
+            path {
+                fill: $white;
+            }
+        }
+    }
+
+    @media (min-width: 501px) {
+        justify-content: space-between;
+    }
+
+
+    .userAccount {
+        margin-#{$right}: rem(20);
+
+        @media (max-width: 500px) {
+            display: none;
+        }
+    }
+
+
+    .header-app-btns {
+        flex: 1 0 0;
+    }
+
+    .lang-btn {
+        color: $grey-a;
+        font-size: rem(14);
+        line-height: rem(26);
+        display: flex;
+        align-items: center;
+        font-weight: $fontRegular;
+        cursor: pointer;
+
+        img {
+            margin-#{$right}: rem(5);
+            margin-#{$left}: rem(5);
+
+            @media (max-width: 500px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            color: $white;
+        }
+    }
+
+
+}
+
+[dir="rtl"] .header {
+    @media (min-width: 500px) {
+        padding-#{$left}: 30px;
+        padding-#{$right}: 30px;
+    }
+
+    .userAccount {
+        margin-#{$left}: rem(20);
+    }
+
+    .header-app-btns {
+        flex: 1 0 0;
+    }
+}

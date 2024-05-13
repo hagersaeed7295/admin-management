@@ -1,0 +1,279 @@
+.dashBoard {
+    display: flex;
+    min-height: 100vh;
+
+    &.main-wrapper {
+        .app-sidebar__toggle {
+            display: none;
+
+            svg {
+                path {
+                    fill: $primary-color;
+                    @media (max-width: 500px) {
+                        fill: $white-f;
+                    }
+                }
+            }
+
+            @media (max-width: 500px) {
+                display: initial;
+                padding-top: rem(6);
+            }
+        }
+
+        .side-menu {
+            background-color: $primary-color;
+            box-shadow: rem(2) rem(0) rem(10) rgba($black-0, 0.1);
+
+            @media (min-width: 1301px) {
+                .sidebarMenu {
+                    position: sticky;
+                    top: 0;
+                    overflow: auto;
+                    border-#{$right}: 0.1px solid;
+                }
+
+                min-width: rem(400);
+            }
+
+            @media (max-width: 1301px) {
+                position: fixed;
+                top: 0px;
+                #{$left}: 0px;
+                height: 100%;
+                z-index: 999;
+            }
+
+            .userAccount {
+                display: none;
+                background-color: $background-color-f8;
+                padding: rem(20) 10px;
+                padding-#{$left}: rem(15);
+                box-shadow: rem(0) rem(2) rem(10) rgba($black-0, 0.1);
+
+                @media (max-width: 500px) {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+
+                .user-name {
+                    display: inherit;
+                }
+            }
+
+            .menu-items {
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+
+                @media (max-width: 500px) {
+                    margin-top: rem(0);
+                    height: calc(100vh - 66px);
+                }
+
+                ul.nav-items {
+                    margin: 0px;
+                    padding: 0px;
+                    list-style: none;
+
+                    li {
+                        margin: 0px;
+                        padding: 0px;
+
+                        a {
+                            text-decoration: none;
+                            cursor: pointer;
+                            color: $white;
+                            font-size: rem(18);
+                            font-weight: $fontSemiBold;
+                            display: flex;
+                            align-items: center;
+                            padding: rem(22) rem(0);
+                            padding: rem(15) rem(0);
+                            padding-#{$left}: rem(50);
+                            padding-#{$right}: rem(15);
+                            line-height: rem(22);
+                            min-height: rem(70);
+
+                            @media (max-width: 1301px) {
+                                padding: rem(22) rem(10);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            @media (max-width: 500px) {
+                                justify-content: flex-start;
+                                color: $primary-color;
+                            }
+                            svg {
+                                path, g {
+                                    @media (max-width: 500px) {
+                                        fill: $primary-color;
+                                    }
+                                }
+                               
+                            }
+                            span {
+                                padding-#{$left}: rem(20);
+                                display: none;
+
+                                >small {
+                                    display: block;
+                                    font-size: rem(14);
+                                }
+
+                                @media (min-width: 1301px) {
+                                    display: block;
+                                }
+
+                                @media (max-width: 500px) {
+                                    display: block;
+                                }
+                            }
+
+                            &:hover,
+                            &:focus,
+                            &:active,
+                            &.active {
+                                background-color: $background-color-f;
+                                color: $primary-color;
+
+                                svg {
+                                    path {
+                                        fill: $primary-color;
+                                    }
+                                    g {
+                                        fill: $primary-color;
+                                    }
+                                }
+                            }
+
+                            &+ul {
+                                background-color: $background-color-f5;
+                            }
+
+                            &.active+ul {
+                                display: block;
+                            }
+                        }
+
+                        >ul {
+                            display: none;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            box-shadow: 0 1px 0 rgba(#e7ebf2, 0.2);
+                        }
+
+                        a {
+                            color: $grey-6;
+                            font-size: rem(16);
+
+                            &:hover,
+                            &.active {
+                                color: $secondary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-container {
+            background-color: $white-f;
+
+            @media (min-width: 1301px) {
+                padding: 0px;
+                max-width: calc(100% - #{rem(400)});
+            }
+
+            @media (max-width: 1301px) {
+                flex: 100%;
+                max-width: 100%;
+                padding: 0px;
+                padding-#{$left}: rem(60);
+                margin: 0;
+            }
+
+            @media (max-width: 766px) {
+                padding-#{$left}: rem(89);
+
+            }
+
+            @media (max-width: 500px) {
+                padding-#{$left}: rem(0);
+            }
+
+            .main-content {
+                @media (min-width: 500px) {
+                    padding-#{$left}: 15px;
+                    padding-#{$right}: 15px;
+                }
+            }
+
+        }
+    }
+
+    &.main-wrapper {
+        &.mobileView {
+            position: relative;
+
+            .side-menu {
+                position: fixed;
+                height: 100%;
+                z-index: 1000;
+            }
+
+            .main-container {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+[dir="rtl"] .dashBoard {
+    &.main-wrapper {
+        .side-menu {
+            @media (min-width: 1301px) {
+                .sidebarMenu {
+                    border-#{$left}: 0.1px solid;
+                }
+            }
+
+            @media (max-width: 1301px) {
+                #{$right}: 0px;
+                #{$left}: auto;
+            }
+
+            .userAccount {
+                padding-#{$right}: rem(15);
+            }
+
+        }
+
+        .main-container {
+
+            @media (max-width: 1301px) {
+                padding-#{$right}: rem(60);
+                padding-#{$left}: rem(0);
+            }
+
+            @media (max-width: 500px) {
+                padding-#{$right}: rem(0);
+            }
+
+            .main-content {
+                @media (min-width: 500px) {
+                    padding-#{$right}: 15px;
+                    padding-#{$left}: 15px;
+                }
+            }
+
+        }
+    }
+
+}
